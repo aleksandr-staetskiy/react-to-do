@@ -4,13 +4,18 @@ import TodoList from "./components/TodoList";
 import Form from "./components/Form";
 
 const App = () => {
-    const [textInput, useTextInput] = useState('')
+    const [textInput, setTextInput] = useState('')
     const [todo, setTodo] = useState('')
 
   return (
       <div className="wrapper">
-          <Form textInput={textInput} useTextInput={useTextInput} />
-          <TodoList />
+          <Form
+              textInput={textInput}
+              setTextInput={setTextInput}
+              setTodo={setTodo}
+              todo={todo}
+          />
+          <TodoList todo={todo} />
       </div>
   );
 }
