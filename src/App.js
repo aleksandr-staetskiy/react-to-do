@@ -5,7 +5,7 @@ import Form from "./components/Form";
 
 const App = () => {
     const [textInput, setTextInput] = useState('')
-    const [todo, setTodo] = useState('')
+    const [todo, setTodo] = useState([])
 
   return (
       <div className="wrapper">
@@ -15,7 +15,10 @@ const App = () => {
               setTodo={setTodo}
               todo={todo}
           />
-          <TodoList todo={todo} />
+          <TodoList
+              todo={todo}
+              setTodo={setTodo}
+          />
       </div>
   );
 }
