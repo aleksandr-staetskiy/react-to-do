@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Form = ({ textInput, setTextInput, setTodo, todo }) => {
+const Form = ({ textInput, setTextInput, setTodo, todo, setStatus, status }) => {
 
     const handleInput = (e) => {
         setTextInput(e.target.value)
@@ -17,6 +17,10 @@ const Form = ({ textInput, setTextInput, setTodo, todo }) => {
         setTextInput('');
     }
 
+    const statusHandler = (e) => {
+        setStatus(e.target.value);
+    }
+
     return(
         <form>
             <input
@@ -31,7 +35,11 @@ const Form = ({ textInput, setTextInput, setTodo, todo }) => {
             >
                 Add Todo
             </button>
-            <select className="select">
+            <select
+                className="select"
+                onChange={statusHandler}
+                value={status}
+            >
                 <option value="all">all</option>
                 <option value="completed">completed</option>
                 <option value="uncompleted">uncompleted</option>

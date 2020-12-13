@@ -11,7 +11,6 @@ const Todo = ({ todo, setTodo, todos }) => {
     const completedHandler = () => {
         setTodo(
             todos.map( item => {
-                console.log(item)
                 if (item.id === todo.id) {
                     return {
                         ...item,

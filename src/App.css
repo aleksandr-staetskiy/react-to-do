@@ -2,6 +2,7 @@
   width: 370px;
   margin: 0 auto;
   padding: 100px;
+  text-align: center;
 }
 
 .btn {
@@ -13,5 +14,5 @@
 }
 
 .completed {
-  text-decoration: underline;
+  text-decoration: line-through;
 }

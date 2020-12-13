@@ -1,17 +1,17 @@
 import React from 'react'
 import Todo from "./Todo";
 
-const TodoList = ({ todo, setTodo }) => {
+const TodoList = ({ todo, setTodo, filteredTodos }) => {
     return(
         <ul className="todo-list">
-            { todo.map( item => (
+            { filteredTodos.length ? filteredTodos.map( item => (
                 <Todo
                     todos={todo}
                     todo={item}
                     key={item.id}
                     setTodo={setTodo}
                 />
-            )) }
+            )) : <h3>Todo list is empty</h3> }
         </ul>
     )
 }
