@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 
 const Todo = ({ todo, setTodo, todos }) => {
 
@@ -29,6 +30,11 @@ const Todo = ({ todo, setTodo, todos }) => {
             <button onClick={deleteHandler}>x</button>
         </li>
     )
+}
+
+Todo.propTypes = {
+    todos: PropTypes.array,
+    todo: PropTypes.object.isRequired,
 }
 
 export default Todo
